@@ -1,0 +1,137 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #182238;
+  background: #f4f6fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+.topbar, footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px max(6vw, 24px);
+}
+
+.topbar {
+  color: #f7f9fc;
+  background: #101b2d;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  color: #101b2d;
+  background: #84e1bc;
+  font-size: .75rem;
+}
+
+.topic, .eyebrow {
+  color: #148267;
+  font-size: .75rem;
+  font-weight: 750;
+  letter-spacing: .13em;
+}
+
+.topic { color: #a9b7cc; }
+
+main {
+  width: min(780px, 88vw);
+  margin: 80px auto 72px;
+}
+
+.intro { margin-bottom: 38px; }
+
+.intro h1 {
+  margin: 14px 0;
+  font-size: clamp(2.8rem, 8vw, 5.1rem);
+  line-height: 1.03;
+  letter-spacing: -.055em;
+}
+
+.intro h1 span { color: #148267; }
+
+.lede {
+  color: #59657a;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.brief {
+  padding: clamp(24px, 5vw, 44px);
+  border: 1px solid #e4e9f1;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 16px 50px #1822380d;
+}
+
+.brief h2 {
+  margin: 15px 0 12px;
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+  letter-spacing: -.035em;
+}
+
+.brief .date {
+  color: #718096;
+  font-size: .9rem;
+}
+
+.brief .summary {
+  margin: 25px 0 0;
+  color: #38455b;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.source {
+  display: inline-flex;
+  margin-top: 28px;
+  padding: 12px 16px;
+  border-radius: 9px;
+  color: #fff;
+  background: #126b58;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.source:hover { background: #0d5647; }
+
+.disclaimer {
+  margin: 22px 4px 0;
+  color: #68758a;
+  font-size: .9rem;
+  line-height: 1.65;
+}
+
+footer {
+  color: #a9b7cc;
+  background: #101b2d;
+  font-size: .85rem;
+}
+
+@media (max-width: 520px) {
+  .topic { font-size: .62rem; }
+  main { margin-top: 54px; }
+  footer { gap: 16px; font-size: .75rem; }
+}

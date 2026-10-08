@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Passkeys make phishing much harder",
+    "summary": "A passkey replaces a password with a cryptographic sign-in tied to your device or password manager. Because it is bound to the real website, it cannot be typed into a convincing look-alike login page. Turn on passkeys for important accounts when the service supports them, and keep your account-recovery options up to date.",
+    "sourceName": "FIDO Alliance",
+    "sourceUrl": "https://fidoalliance.org/passkeys/"
+  },
+  {
+    "title": "Backups are only useful if you can restore them",
+    "summary": "Ransomware can encrypt files that are connected to a computer, including reachable backups. Keep a separate backup that is offline or otherwise protected from everyday account access, and periodically test restoring a few files. A successful restore test is stronger evidence than a backup job that merely reports success.",
+    "sourceName": "CISA: StopRansomware Guide",
+    "sourceUrl": "https://www.cisa.gov/stopransomware/ransomware-guide"
+  },
+  {
+    "title": "Updates close doors attackers already know about",
+    "summary": "Software updates often repair security weaknesses, not just add features. Enable automatic updates for your operating system, browser, and frequently used apps, and restart when prompted so fixes take effect. For devices no longer receiving security updates, plan a replacement or remove them from sensitive tasks.",
+    "sourceName": "CISA: Secure Our World",
+    "sourceUrl": "https://www.cisa.gov/secure-our-world/update-software"
+  },
+  {
+    "title": "Treat unexpected links as unverified",
+    "summary": "A familiar logo or urgent message does not prove who sent it. Before signing in or opening an attachment, reach the organization through its official app or a web address you already trust. Report suspicious messages using your workplace or email provider's reporting tools rather than forwarding them.",
+    "sourceName": "CISA: Recognize and Report Phishing",
+    "sourceUrl": "https://www.cisa.gov/secure-our-world/recognize-and-report-phishing"
+  },
+  {
+    "title": "A password manager makes unique passwords practical",
+    "summary": "Reusing a password lets a breach at one service put other accounts at risk. A reputable password manager can generate and remember a different long password for every account. Protect the manager with a strong unique master password and multi-factor authentication, and save recovery information somewhere safe.",
+    "sourceName": "CISA: Use Strong Passwords",
+    "sourceUrl": "https://www.cisa.gov/secure-our-world/use-strong-passwords"
+  },
+  {
+    "title": "Multi-factor authentication adds another checkpoint",
+    "summary": "Multi-factor authentication asks for something beyond a password, so a stolen password alone is less likely to be enough. Prefer a passkey or security key where available; an authenticator app is generally a stronger fallback than text messages. Never approve a sign-in prompt you did not initiate.",
+    "sourceName": "CISA: More than a Password",
+    "sourceUrl": "https://www.cisa.gov/mfa"
+  },
+  {
+    "title": "A simple incident plan saves time under pressure",
+    "summary": "When an account or device is compromised, people lose valuable time deciding whom to contact and what to disconnect. Write down how to report an incident, who owns important accounts, and where clean backups and recovery details are kept. Practice the steps before an emergency, and preserve relevant evidence when it is safe to do so.",
+    "sourceName": "NIST: Incident Response Recommendations",
+    "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/61/r2/final"
+  }
+]

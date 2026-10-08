@@ -1,0 +1,7 @@
+{
+  "title": "Passkeys make phishing much harder",
+  "summary": "A passkey replaces a password with a cryptographic sign-in tied to your device or password manager. Because it is bound to the real website, it cannot be typed into a convincing look-alike login page. Turn on passkeys for important accounts when the service supports them, and keep your account-recovery options up to date.",
+  "sourceName": "FIDO Alliance",
+  "sourceUrl": "https://fidoalliance.org/passkeys/",
+  "featuredOn": "2026-10-08"
+}
