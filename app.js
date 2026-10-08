@@ -147,13 +147,13 @@ function renderHome() {
 
   const note = element("div", "briefing-note");
   note.append(
-    element("strong", "", "A note on this edition"),
-    element("span", "", "Our seven evergreen explainers rotate daily. These are not live incident reports; source links point to the organisations responsible for current guidance.")
+    element("strong", "", "A note on this week's edition"),
+    element("span", "", "The seven stories in the weekly file are featured Monday through Sunday. Each links to its source; this site does not provide live incident alerts.")
   );
   app.append(note);
 
   const remaining = articles.filter((story) => story.slug !== featured.slug && !others.includes(story));
-  app.append(sectionHeading("Explore the security desk", `${remaining.length} MORE EXPLAINERS`));
+  app.append(sectionHeading("Explore this week's stories", `${remaining.length} MORE STORIES`));
   const cards = element("div", "desk-grid");
   remaining.forEach((story, index) => cards.append(renderCard(story, index + others.length + 1)));
   app.append(cards);
@@ -182,7 +182,7 @@ function renderArticle(slug) {
   const byline = element("div", "article-byline");
   byline.append(element("span", "", `${story.readingTime} MIN READ`));
   byline.append(element("span", "", "·"));
-  byline.append(element("span", "", "EVERGREEN GUIDE"));
+  byline.append(element("span", "", "WEEKLY EDITION"));
   if (story.slug === briefing.slug) {
     byline.append(element("span", "", "·"));
     byline.append(element("time", "", `FEATURED ${briefing.featuredOn}`));
@@ -232,10 +232,10 @@ function renderAbout() {
   page.append(element("p", "about-lede", "Daily Signal is a small independent learning project built to make practical security guidance easier to find and understand."));
 
   const blocks = [
-    ["What this site publishes", "Seven carefully selected evergreen explainers rotate through the daily feature. Topics include account security, phishing, software updates, backups and incident readiness. The site does not claim these explainers are breaking news."],
-    ["How we source information", "Each explainer links to a primary guidance source, such as CISA, NIST or the FIDO Alliance. Follow that link to check the original guidance and any updates. This site is educational and is not a substitute for professional incident response."],
-    ["How the daily edition works", "A scheduled GitHub Actions workflow selects an explainer from the local article library using the UTC date, updates the featured date, and deploys the static site. It uses no AI API key and does not fetch live news."],
-    ["What it does not do", "There is no newsroom, live threat feed, subscriber service, or automated fact-checking system behind this prototype. A scheduled commit or page deploy can be delayed or fail; the site should not be relied upon for urgent security alerts."]
+    ["What this site publishes", "Seven stories are kept in a weekly file and featured one per UTC day from Monday through Sunday. The starter file contains evergreen cybersecurity explainers; replace them with your reviewed weekly stories as you build the news edition."],
+    ["How we source information", "Every story includes a primary source link. Check that source and the publication date when adding weekly content. This site is educational and is not a substitute for professional incident response."],
+    ["How the daily edition works", "A scheduled GitHub Actions workflow selects the story for the UTC weekday from weekly-news.json, updates the featured date, runs the content checks, and deploys the static site. It uses no AI API key and makes one daily publishing commit when the feature date changes."],
+    ["What it does not do", "There is no live news feed, AI writing, or automated fact-checking. The workflow checks the weekly file and local illustrations but does not create maintenance changes just to make extra commits. Scheduled runs can be delayed or fail; do not rely on this site for urgent alerts."]
   ];
   for (const [heading, copy] of blocks) {
     const block = element("section", "about-block");
@@ -258,15 +258,15 @@ function renderRoute() {
 
 async function loadBriefing() {
   const [articlesResponse, briefingResponse] = await Promise.all([
-    fetch("articles.json", { cache: "no-store" }),
+    fetch("weekly-news.json", { cache: "no-store" }),
     fetch("current.json", { cache: "no-store" })
   ]);
   if (!articlesResponse.ok) throw new Error(`Article library request failed (${articlesResponse.status})`);
   if (!briefingResponse.ok) throw new Error(`Daily feature request failed (${briefingResponse.status})`);
   articles = await articlesResponse.json();
   briefing = await briefingResponse.json();
-  if (!Array.isArray(articles) || articles.length === 0 || !briefing.slug) {
-    throw new Error("The article library or daily feature is invalid");
+  if (articles.length !== 7 || !briefing.slug || !articles.some((story) => story.slug === briefing.slug)) {
+    throw new Error("The weekly stories or today's selected story are invalid");
   }
   const editionDate = document.querySelector("#edition-date");
   editionDate.textContent = new Intl.DateTimeFormat("en", {

@@ -23,17 +23,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Test rotation
+      - name: Check weekly stories
         run: node --test
-      - name: Update today's feature
-        if: github.event_name == 'schedule'
+      - name: Prepare today's feature
         run: |
           node scripts/publish.js
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
           git add current.json
           if ! git diff --cached --quiet; then
-            git commit -m "Publish daily cybersecurity brief for $(date -u +%F)"
+            git commit -m "Publish cybersecurity story for $(date -u +%F)"
             git push origin "HEAD:${{ github.ref_name }}"
           fi
       - uses: actions/configure-pages@v5

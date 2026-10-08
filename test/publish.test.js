@@ -4,20 +4,22 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { buildBrief } = require("../scripts/publish");
 
-const articles = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "articles.json"), "utf8"));
+const articles = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "weekly-news.json"), "utf8"));
 
-test("rotates through all articles and repeats after one week", () => {
-  const first = buildBrief(articles, "2026-01-01");
-  const seventh = buildBrief(articles, "2026-01-07");
-  const eighth = buildBrief(articles, "2026-01-08");
+test("features one item per UTC weekday and starts the next week over", () => {
+  const monday = buildBrief(articles, "2026-01-05");
+  const tuesday = buildBrief(articles, "2026-01-06");
+  const sunday = buildBrief(articles, "2026-01-11");
+  const nextMonday = buildBrief(articles, "2026-01-12");
 
-  assert.equal(first.slug, articles[0].slug);
-  assert.equal(seventh.slug, articles[6].slug);
-  assert.equal(eighth.slug, first.slug);
-  assert.equal(eighth.featuredOn, "2026-01-08");
+  assert.equal(monday.slug, articles[0].slug);
+  assert.equal(tuesday.slug, articles[1].slug);
+  assert.equal(sunday.slug, articles[6].slug);
+  assert.equal(nextMonday.slug, monday.slug);
+  assert.equal(nextMonday.featuredOn, "2026-01-12");
 });
 
-test("every story has a unique route, useful article content, and a source", () => {
+test("every weekly story has a unique route, full content, a source, and a local illustration", () => {
   assert.equal(articles.length, 7);
   assert.equal(new Set(articles.map((article) => article.slug)).size, articles.length);
 
@@ -37,5 +39,6 @@ test("every story has a unique route, useful article content, and a source", () 
 
 test("rejects invalid dates and empty article lists", () => {
   assert.throws(() => buildBrief(articles, "not-a-date"), /Invalid UTC date/);
-  assert.throws(() => buildBrief([], "2026-01-01"), /at least one article/);
+  assert.throws(() => buildBrief([], "2026-01-01"), /seven stories/);
+  assert.throws(() => buildBrief(articles.slice(0, 6), "2026-01-01"), /seven stories/);
 });
