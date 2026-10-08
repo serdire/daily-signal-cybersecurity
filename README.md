@@ -4,7 +4,9 @@ Daily Signal is a dark, responsive cybersecurity explainer site with a daily fea
 
 ## Live site
 
-https://serdire.github.io/daily-signal-cybersecurity/
+https://news.yashmaheshwari.fyi/
+
+The repository `CNAME` file keeps the custom domain attached to GitHub Pages on each deployment. In Cloudflare DNS, create a `CNAME` record with name `news`, target `serdire.github.io`, and proxy status **DNS only** while GitHub verifies the domain and provisions HTTPS. The `yashmaheshwari.fyi` zone must already be active on Cloudflare nameservers. DNS and HTTPS activation can take time after the record is added.
 
 ## Daily publishing
 
