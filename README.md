@@ -2,6 +2,8 @@
 
 Daily Signal is a dark, responsive cybersecurity explainer site with a daily feature, section filters, site search, individual article views, a source list, and an editorial transparency page. Its seven evergreen explainers rotate weekly. This is not a live news service.
 
+Each article uses an original SVG illustration stored in the repository. Images are served locally and do not depend on third-party image hosts.
+
 ## Live site
 
 https://news.yashmaheshwari.fyi/

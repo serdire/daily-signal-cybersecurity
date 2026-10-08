@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#182720"/><stop offset="1" stop-color="#090f12"/></linearGradient>
+    <linearGradient id="disk" x2="0" y2="1"><stop stop-color="#253c31"/><stop offset="1" stop-color="#111c1a"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="25"/></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1200v600H0z"/>
+  <circle cx="789" cy="306" r="190" fill="#4ed49c" fill-opacity=".17" filter="url(#glow)"/>
+  <g stroke="#baff5c" stroke-opacity=".12"><path d="M0 100h1200M0 200h1200M0 300h1200M0 400h1200M0 500h1200"/><path d="M100 0v600M200 0v600M300 0v600M400 0v600M500 0v600M600 0v600M700 0v600M800 0v600M900 0v600M1000 0v600M1100 0v600"/></g>
+  <g transform="translate(338 118)">
+    <path d="M70 47c0-25 70-45 157-45s157 20 157 45v263c0 26-70 47-157 47S70 336 70 310V47Z" fill="url(#disk)" stroke="#83dc9e" stroke-width="4"/>
+    <ellipse cx="227" cy="48" rx="157" ry="46" fill="#263c32" stroke="#baff5c" stroke-width="4"/>
+    <path d="M70 135c0 26 70 47 157 47s157-21 157-47M70 223c0 26 70 47 157 47s157-21 157-47" stroke="#83dc9e" stroke-width="4"/>
+    <path d="M227 29v38m-19-19h38" stroke="#baff5c" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <path d="M840 197v-25a51 51 0 0 1 102 0v25" stroke="#baff5c" stroke-width="10" stroke-linecap="round"/>
+  <rect x="816" y="194" width="150" height="117" rx="16" fill="#111c1a" stroke="#baff5c" stroke-width="4"/>
+  <path d="m854 254 25 25 51-58" stroke="#baff5c" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

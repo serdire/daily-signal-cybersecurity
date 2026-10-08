@@ -37,11 +37,13 @@ function renderCard(story, index) {
   const card = element("article", "story-card");
   const link = storyLink(story, "story-card-link");
   const art = element("div", "story-art");
+  const image = element("img");
+  image.src = story.image;
+  image.alt = "";
+  image.loading = "lazy";
+  image.decoding = "async";
   art.setAttribute("aria-hidden", "true");
-  art.append(
-    element("span", "art-code", `${story.category.toUpperCase()} /\nSECURITY BRIEF`),
-    element("span", "art-index", String(index + 1).padStart(2, "0"))
-  );
+  art.append(image, element("span", "art-index", String(index + 1).padStart(2, "0")));
 
   const body = element("div", "story-card-body");
   body.append(element("p", "eyebrow", story.category));
@@ -65,7 +67,12 @@ function renderHero(featured, others) {
   grid.setAttribute("aria-label", "Daily feature and more explainers");
   const lead = element("article", "lead-story");
   lead.setAttribute("aria-labelledby", "lead-title");
-  lead.append(element("span", "lead-orbit"));
+  const image = element("img", "lead-photo");
+  image.src = featured.image;
+  image.alt = featured.imageAlt;
+  image.fetchPriority = "high";
+  image.decoding = "async";
+  lead.append(image);
 
   const copy = element("div", "lead-copy");
   copy.append(element("p", "eyebrow", "TODAY'S CYBERSECURITY EXPLAINER"));
@@ -182,10 +189,18 @@ function renderArticle(slug) {
   }
   article.append(byline);
 
-  const visual = element("div", "article-visual");
-  visual.setAttribute("role", "img");
-  visual.setAttribute("aria-label", `Abstract cybersecurity illustration for ${story.category.toLowerCase()}`);
-  visual.append(element("span", "", `DAILY SIGNAL  /  ${story.category.toUpperCase()}`));
+  const visual = element("figure", "article-visual");
+  const image = element("img");
+  image.src = story.image;
+  image.alt = story.imageAlt;
+  image.loading = "lazy";
+  image.decoding = "async";
+  const caption = element("figcaption");
+  caption.append(
+    element("span", "", `DAILY SIGNAL  /  ${story.category.toUpperCase()}`),
+    element("span", "", "Original illustration · Stored locally")
+  );
+  visual.append(image, caption);
   article.append(visual);
 
   const copy = element("div", "article-copy");

@@ -29,6 +29,9 @@ test("every story has a unique route, useful article content, and a source", () 
     assert.ok(article.body.length >= 3);
     assert.ok(article.takeaways.length >= 2);
     assert.match(article.sourceUrl, /^https:\/\//);
+    assert.match(article.image, /^images\/[\w-]+\.svg$/);
+    assert.ok(fs.existsSync(path.join(__dirname, "..", article.image)));
+    assert.ok(article.imageAlt);
   }
 });
 

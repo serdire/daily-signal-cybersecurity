@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#17242a"/><stop offset="1" stop-color="#0b1117"/></linearGradient>
+    <linearGradient id="phone" x2="1" y2="1"><stop stop-color="#253b3a"/><stop offset="1" stop-color="#111e20"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="24"/></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1200v600H0z"/>
+  <circle cx="617" cy="309" r="190" fill="#8be69f" fill-opacity=".16" filter="url(#glow)"/>
+  <path stroke="#baff5c" stroke-opacity=".1" stroke-width="2" d="M0 100h1200M0 200h1200M0 300h1200M0 400h1200M0 500h1200M100 0v600M200 0v600M300 0v600M400 0v600M500 0v600M600 0v600M700 0v600M800 0v600M900 0v600M1000 0v600M1100 0v600"/>
+  <rect x="457" y="73" width="286" height="454" rx="42" fill="url(#phone)" stroke="#baff5c" stroke-opacity=".76" stroke-width="5"/>
+  <rect x="478" y="120" width="244" height="337" rx="22" fill="#0b1319" stroke="#88c99d" stroke-opacity=".34" stroke-width="3"/>
+  <path d="M552 95h96" stroke="#baff5c" stroke-opacity=".55" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="600" cy="490" r="12" stroke="#baff5c" stroke-opacity=".75" stroke-width="3"/>
+  <path d="M559 249v-19a41 41 0 0 1 82 0v19" stroke="#baff5c" stroke-width="9" stroke-linecap="round"/>
+  <rect x="540" y="246" width="120" height="94" rx="15" fill="#182923" stroke="#baff5c" stroke-width="4"/>
+  <path d="m568 292 21 20 44-48" stroke="#baff5c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="346" cy="304" r="40" stroke="#baff5c" stroke-opacity=".65" stroke-width="4"/>
+  <path d="m326 304 14 14 28-31" stroke="#baff5c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="855" cy="209" r="39" stroke="#65cde4" stroke-opacity=".8" stroke-width="4"/>
+  <path d="m855 188 18 11v21l-18 11-18-11v-21l18-11Z" stroke="#65cde4" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M388 304h64m291-94h72m-438 94 100-87m341 0 77 87" stroke="#baff5c" stroke-opacity=".5" stroke-width="3" stroke-dasharray="7 9"/>
+  <circle cx="828" cy="397" r="24" fill="#baff5c" fill-opacity=".8"/>
+</svg>

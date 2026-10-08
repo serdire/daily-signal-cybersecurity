@@ -2,6 +2,8 @@
   {
     "slug": "passkeys-phishing",
     "category": "Identity",
+    "image": "images/passkeys.svg",
+    "imageAlt": "A digital access key securing a browser sign-in",
     "title": "Passkeys make phishing much harder",
     "summary": "Passkeys replace passwords with cryptographic credentials tied to a website and a device or password manager. That origin check makes a stolen-password trick much harder to pull off.",
     "readingTime": 4,
@@ -21,6 +23,8 @@
   {
     "slug": "ransomware-backups",
     "category": "Resilience",
+    "image": "images/backups.svg",
+    "imageAlt": "Protected data storage with a secure backup shield",
     "title": "A backup is only good if you can restore it",
     "summary": "A backup that is always connected may be reachable during a ransomware incident. Separate copies and occasional restore tests can make the difference between having a backup and being able to recover.",
     "readingTime": 5,
@@ -40,6 +44,8 @@
   {
     "slug": "software-updates",
     "category": "Resilience",
+    "image": "images/updates.svg",
+    "imageAlt": "A computer receiving a verified software security update",
     "title": "Software updates close doors attackers already know about",
     "summary": "Security updates fix weaknesses in operating systems, browsers and apps. A simple update routine reduces the time your devices remain exposed to known issues.",
     "readingTime": 4,
@@ -59,6 +65,8 @@
   {
     "slug": "recognize-phishing",
     "category": "Threats",
+    "image": "images/phishing.svg",
+    "imageAlt": "A suspicious email marked with a security warning",
     "title": "Treat unexpected links as unverified",
     "summary": "A familiar logo or urgent message cannot prove who sent it. Verify requests through a trusted route before signing in, paying, or opening an attachment.",
     "readingTime": 4,
@@ -78,6 +86,8 @@
   {
     "slug": "password-managers",
     "category": "Identity",
+    "image": "images/passwords.svg",
+    "imageAlt": "A secure password vault protected behind layered encryption",
     "title": "A password manager makes unique passwords practical",
     "summary": "Reusing a password can let a breach at one service put other accounts at risk. A password manager helps create and remember a different strong password for each account.",
     "readingTime": 4,
@@ -97,6 +107,8 @@
   {
     "slug": "multi-factor-authentication",
     "category": "Identity",
+    "image": "images/mfa.svg",
+    "imageAlt": "A phone showing a secure second-factor sign-in",
     "title": "Multi-factor authentication adds another checkpoint",
     "summary": "Multi-factor authentication asks for more than a password. It can reduce the risk that a stolen password alone is enough to access an account.",
     "readingTime": 4,
@@ -116,6 +128,8 @@
   {
     "slug": "incident-readiness",
     "category": "Response",
+    "image": "images/response.svg",
+    "imageAlt": "A security response dashboard reviewing and containing a threat",
     "title": "A simple incident plan saves time under pressure",
     "summary": "Knowing who to contact, what to disconnect and where recovery details live can reduce confusion when an account or device is compromised.",
     "readingTime": 5,
