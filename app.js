@@ -2,6 +2,7 @@ const app = document.querySelector("#app");
 const searchInput = document.querySelector("#story-search");
 const sectionLabel = document.querySelector("#current-section");
 const categoryButtons = [...document.querySelectorAll("[data-category]")];
+const wordmark = document.querySelector(".brand-name");
 let articles = [];
 let briefing;
 let selectedCategory = "";
@@ -234,8 +235,8 @@ function renderAbout() {
   const blocks = [
     ["What this site publishes", "Seven stories are kept in a weekly file and featured one per UTC day from Monday through Sunday. The starter file contains evergreen cybersecurity explainers; replace them with your reviewed weekly stories as you build the news edition."],
     ["How we source information", "Every story includes a primary source link. Check that source and the publication date when adding weekly content. This site is educational and is not a substitute for professional incident response."],
-    ["How the daily edition works", "A scheduled GitHub Actions workflow selects the story for the UTC weekday from weekly-news.json, updates the featured date, runs the content checks, and deploys the static site. It uses no AI API key and makes one daily publishing commit when the feature date changes."],
-    ["What it does not do", "There is no live news feed, AI writing, or automated fact-checking. The workflow checks the weekly file and local illustrations but does not create maintenance changes just to make extra commits. Scheduled runs can be delayed or fail; do not rely on this site for urgent alerts."]
+    ["How the daily edition works", "A scheduled GitHub Actions workflow selects the story for the UTC weekday from weekly-news.json, updates the featured date and the current logo style, runs the content checks, and deploys the static site. The logo cycles through ten local font stacks in ten UTC time slots. No AI API key is used."],
+    ["What it does not do", "There is no live news feed, AI writing, or automated fact-checking. The ten daily commits record the site's scheduled logo-style changes; they are not ten new features or ten news stories. Scheduled runs can be delayed or fail, so do not rely on this site for urgent alerts."]
   ];
   for (const [heading, copy] of blocks) {
     const block = element("section", "about-block");
@@ -257,16 +258,25 @@ function renderRoute() {
 }
 
 async function loadBriefing() {
-  const [articlesResponse, briefingResponse] = await Promise.all([
+  const [articlesResponse, briefingResponse, wordmarkResponse] = await Promise.all([
     fetch("weekly-news.json", { cache: "no-store" }),
-    fetch("current.json", { cache: "no-store" })
+    fetch("current.json", { cache: "no-store" }),
+    fetch("current-wordmark.json", { cache: "no-store" })
   ]);
   if (!articlesResponse.ok) throw new Error(`Article library request failed (${articlesResponse.status})`);
   if (!briefingResponse.ok) throw new Error(`Daily feature request failed (${briefingResponse.status})`);
+  if (!wordmarkResponse.ok) throw new Error(`Wordmark style request failed (${wordmarkResponse.status})`);
   articles = await articlesResponse.json();
   briefing = await briefingResponse.json();
+  const wordmarkState = await wordmarkResponse.json();
   if (articles.length !== 7 || !briefing.slug || !articles.some((story) => story.slug === briefing.slug)) {
     throw new Error("The weekly stories or today's selected story are invalid");
+  }
+  if (!Number.isInteger(wordmarkState.styleIndex) || !DailySignalWordmark.fonts[wordmarkState.styleIndex]) {
+    throw new Error("The current wordmark style is invalid");
+  }
+  if (wordmark) {
+    document.documentElement.style.setProperty("--wordmark-font", DailySignalWordmark.fonts[wordmarkState.styleIndex]);
   }
   const editionDate = document.querySelector("#edition-date");
   editionDate.textContent = new Intl.DateTimeFormat("en", {

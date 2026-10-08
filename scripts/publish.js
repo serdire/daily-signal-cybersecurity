@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const { styleIndex } = require("../wordmark");
 
 function buildBrief(articles, date) {
   if (!Array.isArray(articles) || articles.length !== 7) {
@@ -18,6 +19,10 @@ function main() {
   const today = new Date().toISOString().slice(0, 10);
   const brief = buildBrief(articles, today);
   fs.writeFileSync(path.join(__dirname, "..", "current.json"), `${JSON.stringify(brief, null, 2)}\n`);
+  fs.writeFileSync(
+    path.join(__dirname, "..", "current-wordmark.json"),
+    `${JSON.stringify({ styleIndex: styleIndex(new Date()) }, null, 2)}\n`
+  );
 }
 
 if (require.main === module) main();

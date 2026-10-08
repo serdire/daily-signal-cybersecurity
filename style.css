@@ -111,7 +111,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   display: flex;
   flex-direction: column;
   color: #f6f8fa;
-  font: 800 .86rem/1 var(--display);
+  font: 800 .86rem/1 var(--wordmark-font, var(--display));
   letter-spacing: .15em;
 }
 
