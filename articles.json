@@ -1,43 +1,134 @@
 [
   {
+    "slug": "passkeys-phishing",
+    "category": "Identity",
     "title": "Passkeys make phishing much harder",
-    "summary": "A passkey replaces a password with a cryptographic sign-in tied to your device or password manager. Because it is bound to the real website, it cannot be typed into a convincing look-alike login page. Turn on passkeys for important accounts when the service supports them, and keep your account-recovery options up to date.",
-    "sourceName": "FIDO Alliance",
+    "summary": "Passkeys replace passwords with cryptographic credentials tied to a website and a device or password manager. That origin check makes a stolen-password trick much harder to pull off.",
+    "readingTime": 4,
+    "body": [
+      "A passkey is a way to sign in without typing a password. Your device or password manager keeps a private cryptographic key, while the service stores a matching public key. During sign-in, the two sides prove they belong together without sending a reusable password across the internet.",
+      "The important security detail is that passkeys are associated with the real website or app where they were created. If a message sends you to a convincing look-alike login page, your passkey should not authenticate there. That makes this kind of sign-in resistant to common credential-phishing attacks.",
+      "Passkeys may be stored on one device or synchronized by a password manager or platform account. Before relying on them for an important account, make sure you understand how to recover access if you lose a device. Use the service's official account settings to enroll, and keep recovery details current."
+    ],
+    "takeaways": [
+      "Enable passkeys from the account's official security settings.",
+      "Protect the device or password manager that holds your passkeys.",
+      "Keep a safe account-recovery method in case a device is lost."
+    ],
+    "sourceName": "FIDO Alliance: Passkeys",
     "sourceUrl": "https://fidoalliance.org/passkeys/"
   },
   {
-    "title": "Backups are only useful if you can restore them",
-    "summary": "Ransomware can encrypt files that are connected to a computer, including reachable backups. Keep a separate backup that is offline or otherwise protected from everyday account access, and periodically test restoring a few files. A successful restore test is stronger evidence than a backup job that merely reports success.",
+    "slug": "ransomware-backups",
+    "category": "Resilience",
+    "title": "A backup is only good if you can restore it",
+    "summary": "A backup that is always connected may be reachable during a ransomware incident. Separate copies and occasional restore tests can make the difference between having a backup and being able to recover.",
+    "readingTime": 5,
+    "body": [
+      "Backups are copies of important data that let you recover after a device failure, accidental deletion or cyber incident. But a backup attached to the same computer, or controlled by the same compromised account, may be exposed to the same problem as the original files.",
+      "Keep a separate copy that is offline or protected from routine account access. For a business, that might mean using access controls and a recovery plan that prevent an attacker who compromises a workstation from also deleting backup copies. The right design depends on the environment and the value of the data.",
+      "Test recovery before an emergency. Restore a small selection of files, check they open correctly, and make sure someone knows how to perform the process. A successful backup report does not prove that the data can be recovered when you need it."
+    ],
+    "takeaways": [
+      "Keep at least one backup copy isolated from everyday device and account access.",
+      "Test restoring files instead of relying only on successful backup notifications.",
+      "Know who can restore systems and where recovery instructions are kept."
+    ],
     "sourceName": "CISA: StopRansomware Guide",
     "sourceUrl": "https://www.cisa.gov/stopransomware/ransomware-guide"
   },
   {
-    "title": "Updates close doors attackers already know about",
-    "summary": "Software updates often repair security weaknesses, not just add features. Enable automatic updates for your operating system, browser, and frequently used apps, and restart when prompted so fixes take effect. For devices no longer receiving security updates, plan a replacement or remove them from sensitive tasks.",
-    "sourceName": "CISA: Secure Our World",
+    "slug": "software-updates",
+    "category": "Resilience",
+    "title": "Software updates close doors attackers already know about",
+    "summary": "Security updates fix weaknesses in operating systems, browsers and apps. A simple update routine reduces the time your devices remain exposed to known issues.",
+    "readingTime": 4,
+    "body": [
+      "Updates do more than change how software looks. They often repair security weaknesses that could let an attacker access information, disrupt a device or run unwanted code. Once a fix is available, systems that have not installed it can remain exposed to a problem that is no longer secret.",
+      "Turn on automatic updates where practical for your operating system, browser and frequently used apps. Restart devices when needed so the update can finish. For work devices, follow your organisation's update process rather than installing unapproved software or bypassing management controls.",
+      "Every device eventually reaches the end of its supported life. If a phone, computer or router no longer receives security updates, check the manufacturer's guidance and plan to replace it or stop using it for sensitive activity."
+    ],
+    "takeaways": [
+      "Enable automatic security updates for supported devices and apps.",
+      "Restart when prompted so updates can complete.",
+      "Plan for devices that have reached the end of security support."
+    ],
+    "sourceName": "CISA: Update Software",
     "sourceUrl": "https://www.cisa.gov/secure-our-world/update-software"
   },
   {
+    "slug": "recognize-phishing",
+    "category": "Threats",
     "title": "Treat unexpected links as unverified",
-    "summary": "A familiar logo or urgent message does not prove who sent it. Before signing in or opening an attachment, reach the organization through its official app or a web address you already trust. Report suspicious messages using your workplace or email provider's reporting tools rather than forwarding them.",
+    "summary": "A familiar logo or urgent message cannot prove who sent it. Verify requests through a trusted route before signing in, paying, or opening an attachment.",
+    "readingTime": 4,
+    "body": [
+      "Phishing messages try to persuade people to reveal information, open a harmful attachment or visit a fraudulent website. They may imitate a known company, colleague or service, and they often create urgency to discourage careful checking.",
+      "Do not use the message's link or phone number to verify a surprising request. Instead, open the service's official app, type a known website address yourself, or contact the person using a number you already trust. Check the actual sender and destination, but remember that names and logos can be copied.",
+      "If a message looks suspicious, use the reporting feature in your email or workplace tools. If you already entered a password, change it through the official service and review its account-security options. For work accounts or devices, report the event promptly using your organisation's process."
+    ],
+    "takeaways": [
+      "Verify unusual requests through a separate, trusted channel.",
+      "Avoid signing in from unexpected message links.",
+      "Report suspicious messages and act quickly if you shared credentials."
+    ],
     "sourceName": "CISA: Recognize and Report Phishing",
     "sourceUrl": "https://www.cisa.gov/secure-our-world/recognize-and-report-phishing"
   },
   {
+    "slug": "password-managers",
+    "category": "Identity",
     "title": "A password manager makes unique passwords practical",
-    "summary": "Reusing a password lets a breach at one service put other accounts at risk. A reputable password manager can generate and remember a different long password for every account. Protect the manager with a strong unique master password and multi-factor authentication, and save recovery information somewhere safe.",
+    "summary": "Reusing a password can let a breach at one service put other accounts at risk. A password manager helps create and remember a different strong password for each account.",
+    "readingTime": 4,
+    "body": [
+      "When a password is reused across multiple services, a breach at one service can expose other accounts that use the same sign-in. Attackers may try leaked credentials on email, shopping, social and financial services.",
+      "A reputable password manager can generate and store a unique password for each account, removing the need to remember them all. Choose a strong, unique master password and turn on multi-factor authentication for the manager when available.",
+      "Account recovery matters too. Review the manager's recovery options and keep any emergency information somewhere protected. Be careful when signing in on shared devices, and do not store a work password in a personal tool if your employer's policy says otherwise."
+    ],
+    "takeaways": [
+      "Use a unique password for every important account.",
+      "Protect the password manager with a strong master password and MFA.",
+      "Plan how you will recover access to the manager."
+    ],
     "sourceName": "CISA: Use Strong Passwords",
     "sourceUrl": "https://www.cisa.gov/secure-our-world/use-strong-passwords"
   },
   {
+    "slug": "multi-factor-authentication",
+    "category": "Identity",
     "title": "Multi-factor authentication adds another checkpoint",
-    "summary": "Multi-factor authentication asks for something beyond a password, so a stolen password alone is less likely to be enough. Prefer a passkey or security key where available; an authenticator app is generally a stronger fallback than text messages. Never approve a sign-in prompt you did not initiate.",
+    "summary": "Multi-factor authentication asks for more than a password. It can reduce the risk that a stolen password alone is enough to access an account.",
+    "readingTime": 4,
+    "body": [
+      "A password is one kind of proof that you are the account holder. Multi-factor authentication adds another kind, such as a code, security key or device approval. This extra step can block some attacks that rely only on stolen passwords.",
+      "The methods are not all equally resistant to phishing. Where available, a passkey or hardware security key can provide stronger protection than a code entered into a website. An authenticator app can be a useful alternative. Text-message codes may be better than no additional factor, but can have weaknesses.",
+      "Treat unexpected sign-in approvals as warning signs. Do not approve a prompt you did not initiate or share a one-time code with someone who contacts you. Save recovery codes securely and review how to revoke devices you no longer use."
+    ],
+    "takeaways": [
+      "Turn on MFA for email, financial and other important accounts.",
+      "Prefer phishing-resistant sign-in options where available.",
+      "Never approve an unexpected prompt or share a one-time code."
+    ],
     "sourceName": "CISA: More than a Password",
     "sourceUrl": "https://www.cisa.gov/mfa"
   },
   {
+    "slug": "incident-readiness",
+    "category": "Response",
     "title": "A simple incident plan saves time under pressure",
-    "summary": "When an account or device is compromised, people lose valuable time deciding whom to contact and what to disconnect. Write down how to report an incident, who owns important accounts, and where clean backups and recovery details are kept. Practice the steps before an emergency, and preserve relevant evidence when it is safe to do so.",
+    "summary": "Knowing who to contact, what to disconnect and where recovery details live can reduce confusion when an account or device is compromised.",
+    "readingTime": 5,
+    "body": [
+      "People make better decisions when they are not trying to invent a response during an emergency. A short incident plan can record who should be contacted, how to report suspicious activity, and where essential account and recovery information is stored.",
+      "For an individual or family, decide how you will secure email and financial accounts if a device is lost or compromised. For an organisation, include roles, escalation routes, backup recovery and a way to communicate if normal systems are unavailable. Tailor the plan to your actual devices and responsibilities.",
+      "Practice the steps occasionally and update contact details when they change. If an incident occurs, follow trusted professional or organisational guidance. Preserve relevant information where it is safe to do so, and avoid making changes that could destroy evidence if an investigation is needed."
+    ],
+    "takeaways": [
+      "Write down who to contact and how to report an incident.",
+      "Include account recovery, backup restoration and fallback communications.",
+      "Review and practice the plan before it is needed."
+    ],
     "sourceName": "NIST: Incident Response Recommendations",
     "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/61/r2/final"
   }

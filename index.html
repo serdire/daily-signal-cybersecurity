@@ -3,32 +3,73 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#101b2d">
-    <meta name="description" content="A daily rotation of practical, source-linked cybersecurity explainers.">
-    <title>Daily Signal | Cybersecurity</title>
+    <meta name="theme-color" content="#080c12">
+    <meta name="description" content="Daily Signal: practical, source-linked cybersecurity reporting and explainers.">
+    <title>Daily Signal | Cybersecurity desk</title>
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
   </head>
   <body>
-    <header class="topbar">
-      <a class="brand" href="./"><span class="brand-mark">DS</span> Daily Signal</a>
-      <span class="topic">CYBERSECURITY BRIEF</span>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="masthead wrap">
+        <a class="brand" href="./" aria-label="Daily Signal home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span class="brand-name">DAILY<span>SIGNAL</span></span>
+        </a>
+        <div class="masthead-meta">
+          <span class="desk-label"><i aria-hidden="true"></i> CYBERSECURITY DESK</span>
+          <span id="edition-date" class="edition-date">DAILY EDITION</span>
+        </div>
+      </div>
+      <nav class="section-nav" aria-label="News sections">
+        <div class="nav-inner wrap">
+          <a class="nav-home active" href="./">Top stories</a>
+          <button type="button" data-category="Threats">Threats</button>
+          <button type="button" data-category="Identity">Identity</button>
+          <button type="button" data-category="Resilience">Resilience</button>
+          <button type="button" data-category="Response">Response</button>
+          <button type="button" data-category="Privacy">Privacy</button>
+          <a class="nav-about" href="#/about">About this desk</a>
+        </div>
+      </nav>
+      <div class="edition-strip">
+        <div class="wrap strip-inner">
+          <span class="strip-label">THE DAILY BRIEF</span>
+          <span>Clear guidance for a changing digital world</span>
+          <span class="strip-note">EVERGREEN EXPLAINERS · SOURCED</span>
+        </div>
+      </div>
     </header>
-    <main>
-      <section class="intro">
-        <p class="eyebrow">A clearer view of online security</p>
-        <h1>Small steps.<br><span>Stronger security.</span></h1>
-        <p class="lede">One practical cybersecurity explainer, featured each day.</p>
-      </section>
-      <article id="brief" class="brief" aria-live="polite">
-        <p class="eyebrow">TODAY'S FEATURE</p>
-        <p>Loading today's briefing…</p>
-      </article>
-      <p class="disclaimer">These are evergreen explainers, not breaking-news reports. The seven-article cycle repeats weekly. Follow the source links for current guidance.</p>
+
+    <main id="main" class="wrap page-shell">
+      <div class="page-tools">
+        <div class="breadcrumb" aria-label="Breadcrumb"><span>HOME</span><span class="crumb-divider">/</span><span id="current-section">TOP STORIES</span></div>
+        <label class="search-box">
+          <span class="visually-hidden">Search articles</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+          <input id="story-search" type="search" placeholder="Search this site" autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+      </div>
+      <div id="app" aria-live="polite">
+        <div class="loading-state"><span class="loader" aria-hidden="true"></span>Loading the daily briefing…</div>
+      </div>
     </main>
-    <footer>
-      <span>Daily Signal</span>
-      <span>Learn. Verify. Stay safer.</span>
+
+    <footer class="site-footer">
+      <div class="wrap footer-main">
+        <a class="brand footer-brand" href="./">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span class="brand-name">DAILY<span>SIGNAL</span></span>
+        </a>
+        <p>Security reporting for a safer digital life.</p>
+        <a href="#/about">About this desk <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="wrap footer-bottom">
+        <span>© Daily Signal · An independent learning project</span>
+        <span>Evergreen explainers, not breaking-news alerts. Always check the linked source for current guidance.</span>
+      </div>
     </footer>
   </body>
 </html>
