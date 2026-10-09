@@ -29,26 +29,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          
       - name: Check weekly stories
         run: node --test
+        
       - name: Prepare today's edition and wordmark
         run: |
           node scripts/publish.js
+          
+          # 1. Configure the Git user profile to make it count as your contribution
           git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+          git config user.email "${{ github.actor_id }}+${{ github.actor }}@://github.com"
+          
+          # 2. Stage the modified automated files
           git add current.json current-wordmark.json
+          
+          # 3. Commit and push directly to a separate background branch called 'automation-streak'
           if ! git diff --cached --quiet; then
             git commit -m "Publish Daily Signal update for $(date -u +%F) slot $(node -p "require('./current-wordmark.json').styleIndex")"
-            git push origin "HEAD:${{ github.ref_name }}"
+            git push origin HEAD:refs/heads/automation-streak
           fi
+
       - uses: actions/configure-pages@v5
         with:
           enablement: true
+          
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
+          
       - id: deployment
         uses: actions/deploy-pages@v4
