@@ -1,22 +1,22 @@
 {
-  "slug": "password-managers",
+  "slug": "multi-factor-authentication",
   "category": "Identity",
-  "image": "images/passwords.svg",
-  "imageAlt": "A secure password vault protected behind layered encryption",
-  "title": "A password manager makes unique passwords practical",
-  "summary": "Reusing a password can let a breach at one service put other accounts at risk. A password manager helps create and remember a different strong password for each account.",
+  "image": "images/mfa.svg",
+  "imageAlt": "A phone showing a secure second-factor sign-in",
+  "title": "Multi-factor authentication adds another checkpoint",
+  "summary": "Multi-factor authentication asks for more than a password. It can reduce the risk that a stolen password alone is enough to access an account.",
   "readingTime": 4,
   "body": [
-    "When a password is reused across multiple services, a breach at one service can expose other accounts that use the same sign-in. Attackers may try leaked credentials on email, shopping, social and financial services.",
-    "A reputable password manager can generate and store a unique password for each account, removing the need to remember them all. Choose a strong, unique master password and turn on multi-factor authentication for the manager when available.",
-    "Account recovery matters too. Review the manager's recovery options and keep any emergency information somewhere protected. Be careful when signing in on shared devices, and do not store a work password in a personal tool if your employer's policy says otherwise."
+    "A password is one kind of proof that you are the account holder. Multi-factor authentication adds another kind, such as a code, security key or device approval. This extra step can block some attacks that rely only on stolen passwords.",
+    "The methods are not all equally resistant to phishing. Where available, a passkey or hardware security key can provide stronger protection than a code entered into a website. An authenticator app can be a useful alternative. Text-message codes may be better than no additional factor, but can have weaknesses.",
+    "Treat unexpected sign-in approvals as warning signs. Do not approve a prompt you did not initiate or share a one-time code with someone who contacts you. Save recovery codes securely and review how to revoke devices you no longer use."
   ],
   "takeaways": [
-    "Use a unique password for every important account.",
-    "Protect the password manager with a strong master password and MFA.",
-    "Plan how you will recover access to the manager."
+    "Turn on MFA for email, financial and other important accounts.",
+    "Prefer phishing-resistant sign-in options where available.",
+    "Never approve an unexpected prompt or share a one-time code."
   ],
-  "sourceName": "CISA: Use Strong Passwords",
-  "sourceUrl": "https://www.cisa.gov/secure-our-world/use-strong-passwords",
-  "featuredOn": "2026-10-09"
+  "sourceName": "CISA: More than a Password",
+  "sourceUrl": "https://www.cisa.gov/mfa",
+  "featuredOn": "2026-10-10"
 }
