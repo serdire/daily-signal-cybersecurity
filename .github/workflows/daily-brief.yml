@@ -1,1 +1,60 @@
-name: Publish daily cybersecurity briefon: push: schedule: - cron: "7 1 * * *" - cron: "31 3 * * *" - cron: "55 5 * * *" - cron: "19 8 * * *" - cron: "43 10 * * *" - cron: "7 13 * * *" - cron: "31 15 * * *" - cron: "55 17 * * *" - cron: "19 20 * * *" - cron: "43 22 * * *"permissions: contents: write pages: write id-token: writeconcurrency: group: pages cancel-in-progress: falsejobs: publish: if: github.event_name == 'schedule' || github.ref == format('refs/heads/{0}', github.event.repository.default_branch) runs-on: ubuntu-latest steps: - uses: actions/checkout@v4 - uses: actions/setup-node@v4 with: node-version: 22 - name: Check weekly stories run: node --test - name: Prepare today's edition and wordmark run: | node scripts/publish.js git config user.name "${{ github.actor }}" git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com" git add current.json current-wordmark.json if ! git diff --cached --quiet; then git commit -m "Publish Daily Signal update for $(date -u +%F) slot $(node -p "require('./current-wordmark.json').styleIndex")" git push origin "HEAD:${{ github.ref_name }}" fi - uses: actions/configure-pages@v5 with: enablement: true - uses: actions/upload-pages-artifact@v3 with: path: . - id: deployment uses: actions/deploy-pages@v4
+name: Publish daily cybersecurity brief
+
+on:
+  push:
+  schedule:
+    - cron: "7 1 * * *"
+    - cron: "31 3 * * *"
+    - cron: "55 5 * * *"
+    - cron: "19 8 * * *"
+    - cron: "43 10 * * *"
+    - cron: "7 13 * * *"
+    - cron: "31 15 * * *"
+    - cron: "55 17 * * *"
+    - cron: "19 20 * * *"
+    - cron: "43 22 * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.event_name == 'schedule' || github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check weekly stories
+        run: node --test
+
+      - name: Prepare today's edition and wordmark
+        run: |
+          node scripts/publish.js
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+          git add current.json current-wordmark.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Daily Signal update for $(date -u +%F) slot $(node -p "require('./current-wordmark.json').styleIndex")"
+            git push origin "HEAD:${{ github.ref_name }}"
+          fi
+
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
