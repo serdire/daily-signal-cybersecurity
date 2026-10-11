@@ -1,22 +1,22 @@
 {
-  "slug": "multi-factor-authentication",
-  "category": "Identity",
-  "image": "images/mfa.svg",
-  "imageAlt": "A phone showing a secure second-factor sign-in",
-  "title": "Multi-factor authentication adds another checkpoint",
-  "summary": "Multi-factor authentication asks for more than a password. It can reduce the risk that a stolen password alone is enough to access an account.",
-  "readingTime": 4,
+  "slug": "incident-readiness",
+  "category": "Response",
+  "image": "images/response.svg",
+  "imageAlt": "A security response dashboard reviewing and containing a threat",
+  "title": "A simple incident plan saves time under pressure",
+  "summary": "Knowing who to contact, what to disconnect and where recovery details live can reduce confusion when an account or device is compromised.",
+  "readingTime": 5,
   "body": [
-    "A password is one kind of proof that you are the account holder. Multi-factor authentication adds another kind, such as a code, security key or device approval. This extra step can block some attacks that rely only on stolen passwords.",
-    "The methods are not all equally resistant to phishing. Where available, a passkey or hardware security key can provide stronger protection than a code entered into a website. An authenticator app can be a useful alternative. Text-message codes may be better than no additional factor, but can have weaknesses.",
-    "Treat unexpected sign-in approvals as warning signs. Do not approve a prompt you did not initiate or share a one-time code with someone who contacts you. Save recovery codes securely and review how to revoke devices you no longer use."
+    "People make better decisions when they are not trying to invent a response during an emergency. A short incident plan can record who should be contacted, how to report suspicious activity, and where essential account and recovery information is stored.",
+    "For an individual or family, decide how you will secure email and financial accounts if a device is lost or compromised. For an organisation, include roles, escalation routes, backup recovery and a way to communicate if normal systems are unavailable. Tailor the plan to your actual devices and responsibilities.",
+    "Practice the steps occasionally and update contact details when they change. If an incident occurs, follow trusted professional or organisational guidance. Preserve relevant information where it is safe to do so, and avoid making changes that could destroy evidence if an investigation is needed."
   ],
   "takeaways": [
-    "Turn on MFA for email, financial and other important accounts.",
-    "Prefer phishing-resistant sign-in options where available.",
-    "Never approve an unexpected prompt or share a one-time code."
+    "Write down who to contact and how to report an incident.",
+    "Include account recovery, backup restoration and fallback communications.",
+    "Review and practice the plan before it is needed."
   ],
-  "sourceName": "CISA: More than a Password",
-  "sourceUrl": "https://www.cisa.gov/mfa",
-  "featuredOn": "2026-10-10"
+  "sourceName": "NIST: Incident Response Recommendations",
+  "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/61/r2/final",
+  "featuredOn": "2026-10-11"
 }
