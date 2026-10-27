@@ -1,22 +1,22 @@
 {
-  "slug": "passkeys-phishing",
-  "category": "Identity",
-  "image": "images/passkeys.svg",
-  "imageAlt": "A digital access key securing a browser sign-in",
-  "title": "Passkeys make phishing much harder",
-  "summary": "Passkeys replace passwords with cryptographic credentials tied to a website and a device or password manager. That origin check makes a stolen-password trick much harder to pull off.",
-  "readingTime": 4,
+  "slug": "ransomware-backups",
+  "category": "Resilience",
+  "image": "images/backups.svg",
+  "imageAlt": "Protected data storage with a secure backup shield",
+  "title": "A backup is only good if you can restore it",
+  "summary": "A backup that is always connected may be reachable during a ransomware incident. Separate copies and occasional restore tests can make the difference between having a backup and being able to recover.",
+  "readingTime": 5,
   "body": [
-    "A passkey is a way to sign in without typing a password. Your device or password manager keeps a private cryptographic key, while the service stores a matching public key. During sign-in, the two sides prove they belong together without sending a reusable password across the internet.",
-    "The important security detail is that passkeys are associated with the real website or app where they were created. If a message sends you to a convincing look-alike login page, your passkey should not authenticate there. That makes this kind of sign-in resistant to common credential-phishing attacks.",
-    "Passkeys may be stored on one device or synchronized by a password manager or platform account. Before relying on them for an important account, make sure you understand how to recover access if you lose a device. Use the service's official account settings to enroll, and keep recovery details current."
+    "Backups are copies of important data that let you recover after a device failure, accidental deletion or cyber incident. But a backup attached to the same computer, or controlled by the same compromised account, may be exposed to the same problem as the original files.",
+    "Keep a separate copy that is offline or protected from routine account access. For a business, that might mean using access controls and a recovery plan that prevent an attacker who compromises a workstation from also deleting backup copies. The right design depends on the environment and the value of the data.",
+    "Test recovery before an emergency. Restore a small selection of files, check they open correctly, and make sure someone knows how to perform the process. A successful backup report does not prove that the data can be recovered when you need it."
   ],
   "takeaways": [
-    "Enable passkeys from the account's official security settings.",
-    "Protect the device or password manager that holds your passkeys.",
-    "Keep a safe account-recovery method in case a device is lost."
+    "Keep at least one backup copy isolated from everyday device and account access.",
+    "Test restoring files instead of relying only on successful backup notifications.",
+    "Know who can restore systems and where recovery instructions are kept."
   ],
-  "sourceName": "FIDO Alliance: Passkeys",
-  "sourceUrl": "https://fidoalliance.org/passkeys/",
-  "featuredOn": "2026-10-26"
+  "sourceName": "CISA: StopRansomware Guide",
+  "sourceUrl": "https://www.cisa.gov/stopransomware/ransomware-guide",
+  "featuredOn": "2026-10-27"
 }
