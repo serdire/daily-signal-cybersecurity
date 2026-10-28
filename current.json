@@ -1,22 +1,22 @@
 {
-  "slug": "ransomware-backups",
+  "slug": "software-updates",
   "category": "Resilience",
-  "image": "images/backups.svg",
-  "imageAlt": "Protected data storage with a secure backup shield",
-  "title": "A backup is only good if you can restore it",
-  "summary": "A backup that is always connected may be reachable during a ransomware incident. Separate copies and occasional restore tests can make the difference between having a backup and being able to recover.",
-  "readingTime": 5,
+  "image": "images/updates.svg",
+  "imageAlt": "A computer receiving a verified software security update",
+  "title": "Software updates close doors attackers already know about",
+  "summary": "Security updates fix weaknesses in operating systems, browsers and apps. A simple update routine reduces the time your devices remain exposed to known issues.",
+  "readingTime": 4,
   "body": [
-    "Backups are copies of important data that let you recover after a device failure, accidental deletion or cyber incident. But a backup attached to the same computer, or controlled by the same compromised account, may be exposed to the same problem as the original files.",
-    "Keep a separate copy that is offline or protected from routine account access. For a business, that might mean using access controls and a recovery plan that prevent an attacker who compromises a workstation from also deleting backup copies. The right design depends on the environment and the value of the data.",
-    "Test recovery before an emergency. Restore a small selection of files, check they open correctly, and make sure someone knows how to perform the process. A successful backup report does not prove that the data can be recovered when you need it."
+    "Updates do more than change how software looks. They often repair security weaknesses that could let an attacker access information, disrupt a device or run unwanted code. Once a fix is available, systems that have not installed it can remain exposed to a problem that is no longer secret.",
+    "Turn on automatic updates where practical for your operating system, browser and frequently used apps. Restart devices when needed so the update can finish. For work devices, follow your organisation's update process rather than installing unapproved software or bypassing management controls.",
+    "Every device eventually reaches the end of its supported life. If a phone, computer or router no longer receives security updates, check the manufacturer's guidance and plan to replace it or stop using it for sensitive activity."
   ],
   "takeaways": [
-    "Keep at least one backup copy isolated from everyday device and account access.",
-    "Test restoring files instead of relying only on successful backup notifications.",
-    "Know who can restore systems and where recovery instructions are kept."
+    "Enable automatic security updates for supported devices and apps.",
+    "Restart when prompted so updates can complete.",
+    "Plan for devices that have reached the end of security support."
   ],
-  "sourceName": "CISA: StopRansomware Guide",
-  "sourceUrl": "https://www.cisa.gov/stopransomware/ransomware-guide",
-  "featuredOn": "2026-10-27"
+  "sourceName": "CISA: Update Software",
+  "sourceUrl": "https://www.cisa.gov/secure-our-world/update-software",
+  "featuredOn": "2026-10-28"
 }
